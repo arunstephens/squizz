@@ -35,7 +35,7 @@ export default function Home() {
 
       {(quizzes && quizzes.length > 0) && <ul className='list-disc ml-5'>
         <li className='my-3' key={quizzes[0].url}><Link className='text-blue-600 hover:underline hover:text-blue-400' href={quizzes[0].url} onClick={redirectToQuiz}>{quizzes[0].title}</Link></li>
-        <li><Image src="/hangfive.png" alt="Hang Five logo" width={24} height={24} className='inline mr-2' /><a href="https://playhangfive.com/" className='text-blue-600 hover:underline hover:text-blue-400 font-bold'>Hang Five for {Intl.DateTimeFormat("en-NZ", { dateStyle: 'long' }).format(new Date())}</a></li>
+        <li><Image src="/hangfive.png" alt="Hang Five logo" width={24} height={24} className='inline mr-2' /><a href="https://playhangfive.com/?utm_medium=social&utm_source=squizz&utm_campaign=squizz20231106" className='text-blue-600 hover:underline hover:text-blue-400 font-bold'>Hang Five for {Intl.DateTimeFormat("en-NZ", { dateStyle: 'long' }).format(new Date())}</a></li>
         {quizzes.slice(1).map((q) => {
           return <li className='my-3' key={q.url}><Link className='text-blue-600 hover:underline hover:text-blue-400' href={q.url} onClick={redirectToQuiz}>{q.title}</Link></li>
         })}
