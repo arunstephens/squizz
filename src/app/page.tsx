@@ -28,16 +28,20 @@ export default function Home() {
     <main className="m-5">
       <h1 className="text-xl font-bold mb-2">Squizz</h1>
 
-      <form action={getQuiz} >
+      {/* <form action={getQuiz} >
         <label>Paste the original URL here: <input name='url' className="border rounded px-1" type="text" defaultValue="https://www.stuff.co.nz/national/quizzes/300988161/stuff-quiz-morning-trivia-challenge-november-6-2023" /></label>
         <button className="rounded ml-2 px-2 bg-slate-600 text-white active:bg-slate-400" type="submit">Get quiz</button>
-      </form>
+      </form> */}
 
-      <ul className='list-disc ml-5'>
-        {quizzes.map((q) => {
+      {(quizzes && quizzes.length > 0) && <ul className='list-disc ml-5'>
+        <li className='my-3' key={quizzes[0].url}><Link className='text-blue-600 hover:underline hover:text-blue-400' href={quizzes[0].url} onClick={redirectToQuiz}>{quizzes[0].title}</Link></li>
+        <li><Image src="/hangfive.png" alt="Hang Five logo" width={24} height={24} className='inline mr-2' /><a href="https://playhangfive.com/" className='text-blue-600 hover:underline hover:text-blue-400 font-bold'>Hang Five for {Intl.DateTimeFormat("en-NZ", { dateStyle: 'long' }).format(new Date())}</a></li>
+        {quizzes.slice(1).map((q) => {
           return <li className='my-3' key={q.url}><Link className='text-blue-600 hover:underline hover:text-blue-400' href={q.url} onClick={redirectToQuiz}>{q.title}</Link></li>
         })}
-      </ul>
+      </ul>}
+
+
     </main>
   )
 }
