@@ -47,7 +47,7 @@ export type QuizLink = {
 
 export async function getQuizzes(): Promise<QuizLink[]> {
 
-    const url = "https://www.stuff.co.nz/national/quizzes";
+    const url = "https://www.stuff.co.nz/national/quizzes?t=" + new Date().getDate();
 
     const response = await fetch(new URL(url));
 
