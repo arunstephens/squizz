@@ -25,7 +25,7 @@ export default function Home() {
   }
 
   return (
-    <main className="m-5">
+    <main className="my-5 mx-auto w-96">
       <h1 className="text-xl font-bold mb-2">Squizz</h1>
 
       {/* <form action={getQuiz} >

@@ -37,7 +37,7 @@ export async function getQuiz(input: FormData | string) {
 }
 
 const getTitle = (item: string) => {
-    return item.substring(item.lastIndexOf('/') + 1).replaceAll('-', ' ');
+    return item.substring(item.lastIndexOf('/') + 1).replaceAll('-', ' ').replace("stuff quiz ", "");
 }
 
 export type QuizLink = {
