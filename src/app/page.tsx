@@ -33,11 +33,11 @@ export default function Home() {
   }
 
   return (
-    <main className="">
+    <main className="m-5">
       <h1 className="text-xl font-bold mb-2">Squizz</h1>
 
       <form action={getQuiz} >
-        <label>Paste the original URL here: <input name='url' className="border rounded" type="text" defaultValue="https://www.stuff.co.nz/national/quizzes/300988161/stuff-quiz-morning-trivia-challenge-november-6-2023" /></label>
+        <label>Paste the original URL here: <input name='url' className="border rounded px-1" type="text" defaultValue="https://www.stuff.co.nz/national/quizzes/300988161/stuff-quiz-morning-trivia-challenge-november-6-2023" /></label>
         <button className="rounded ml-2 px-2 bg-slate-600 text-white active:bg-slate-400" type="submit">Get quiz</button>
       </form>
     </main>
