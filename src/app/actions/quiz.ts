@@ -49,7 +49,7 @@ export async function getQuizzes(): Promise<QuizLink[]> {
 
     const url = "https://www.stuff.co.nz/national/quizzes?t=" + new Date().getDate();
 
-    const response = await fetch(new URL(url));
+    const response = await fetch(new URL(url), { cache: "no-cache" });
 
     if (response.ok) {
         const page = await response.text();
